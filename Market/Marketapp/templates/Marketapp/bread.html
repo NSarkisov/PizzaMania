@@ -1,0 +1,58 @@
+{% extends 'Marketapp/base_generic.html' %}
+
+{% block title %}PizzaMania | Хлеб | Заказ хлеб онлайн {% endblock %}
+
+{% block products %}
+{% load static %}
+{% for info in information %}
+<div class="product-card product-card--vertical">
+    <a href="" class="product-card__media-wrapper">
+        <div class="media-image media-image--lazy media-image--loaded product-card-media">
+            <img class="media-image__element product-card-media__element"
+                 src="{{ info.img.url }}"
+                 alt="{{ info.name }}">
+        </div>
+        <div class="product-card__button-eye">
+            <svg class="card-icon" width="32" height="32" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                <g>
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+                </g>
+            </svg>
+        </div>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__title" data-test="product-card-title">{{info.name}}
+<!--            <span class="product-card-label product-card__label product-card-label&#45;&#45;type-hot">-->
+<!--                <span class="product-card-label__media">-->
+<!--                    <img src="static/Marketapp/img/product-card/product-label&#45;&#45;hot94267c1f79e1a8c504aa.png"-->
+<!--                         alt="острая">-->
+<!--                </span>-->
+<!--            </span>-->
+        </div>
+        <div class="product-card__subtitle" data-test="product-card-subtitle"></div>
+        <div class="product-card__description" data-test="product-card-description">{%for ingredient in info.ingredients_set.all %}{% with product=ingredient.id_product %}{{ product.name|lower|striptags }}{% if not forloop.last %}, {% endif %}{% endwith %}{% endfor %} </div>
+
+        <div class="product-card__modification-summary">
+            <div class="product-card__modification-info">
+                <p class="product-card__modification-info-price"
+                   data-test="product-card-price">{{info.prices.first.cost}} руб.</p>
+                <p class="product-card__modification-info-weight"
+                   data-test="product-card-weight">{{info.prices.first.weight}}</p>
+            </div>
+            <div class="product-card__actions" data-test="product-card-actions">
+                <button class="custom-button custom-button--secondary custom-button--size-medium"
+                        type="button" data-test="custom-button" data-action="a2b">
+                    <span class="custom-button__content">
+                        <span class="custom-button__badge"></span>
+                        <span class="custom-button__content-children">
+                            <span class="product-card__actions-add--text">В корзину</span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

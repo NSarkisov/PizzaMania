@@ -1,0 +1,512 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="www.PizzaMania.by">
+    <meta property="og:description" content="🔥🔥🔥Горячая PizzaMan 🍕🍕🍕 с бесплатной доставкой в твоем городе!">
+    <meta property="og:image" content="static/Marketapp/img/header/logo-ico.png">
+    <meta property="og:url" content="www.pizzamaniac.by">
+    <link rel="icon" href="{% static 'Marketapp/img/site-logo-ico.png' %}" type="image/jpg">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Marketapp/css/base_generic.css' %}">
+    <link rel="stylesheet" href="{% static 'Marketapp/css/flickity.css' %}">
+</head>
+<body>
+<div class="pizza-mania">
+    <div class="scene scene--with-footer scene-listing listing">
+        <div class="header-desktop header-desktop--theme-default">
+            <div class="header-desktop__content">
+                <div class="header-info header-desktop__info header-desktop__info--delivery-time header-info--theme-default header-info--direction-row header-info--content-descr-align-right">
+                    <div class="logo-pizzamania">
+                        <a href="/" class="logo-pizzamania__link">
+                            <img src="{% static 'Marketapp/img/header/logo-ico.png' %}" alt="" class="logo-pizzamania__media">
+                        </a>
+                    </div>
+                    <div class="header-info__content-wrapper">
+                        <div class="header-info__content">
+                            PizzaMania
+                        </div>
+                    </div>
+                </div>
+                <div class="header-info header-desktop__info header-desktop__info--delivery-time header-info--theme-default header-info--direction-row header-info--content-descr-align-right">
+                    <div class="header-info__icon-wrapper">
+                        <svg class="custom-icon" width="22" height="22" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg" fill="#00537a">
+                            <g>
+                                <path
+                                        d="m14.01512,0.75l-4.27794,0c-0.58821,0 -1.06947,0.48126 -1.06947,1.06947c0,0.58821 0.48126,1.06947 1.06947,1.06947l4.27794,0c0.58821,0 1.06947,-0.48126 1.06947,-1.06947c0,-0.58821 -0.48126,-1.06947 -1.06947,-1.06947zm-2.139,13.90306c0.58821,0 1.06947,-0.48126 1.06947,-1.06947l0,-4.27786c0,-0.58821 -0.48126,-1.06947 -1.06947,-1.06947c-0.58821,0 -1.06947,0.48126 -1.06947,1.06947l0,4.27786c0,0.58821 0.48126,1.06947 1.06947,1.06947zm7.51842,-7.06917l0.8021,-0.8021c0.4064,-0.4064 0.41709,-1.08016 0,-1.49725l-0.01069,-0.01069c-0.41709,-0.41709 -1.08016,-0.4064 -1.49725,0l-0.8021,0.8021c-1.65767,-1.32614 -3.74313,-2.11754 -6.01047,-2.11754c-5.13344,0 -9.49686,4.23509 -9.62519,9.36852c-0.13903,5.43289 4.2137,9.88187 9.62519,9.88187c5.32601,0 9.62527,-4.30995 9.62527,-9.62519c0,-2.26727 -0.7914,-4.35273 -2.10685,-5.9997zm-7.51842,13.48597c-4.13883,0 -7.48626,-3.34743 -7.48626,-7.48626c0,-4.13883 3.34743,-7.48626 7.48626,-7.48626c4.1389,0 7.48633,3.34743 7.48633,7.48626c0,4.13883 -3.34743,7.48626 -7.48633,7.48626z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="header-info__content-wrapper">
+                        <div class="header-info__content">30 минут доставка</div>
+                        <div class="header-info__content-description">
+                            <a href="" data-manual="true">подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-info header-desktop__info header-desktop__info--phone header-info--theme-default header-info--direction-row header-info--content-descr-align-left">
+                    <div class="header-info__icon-wrapper">
+                        <svg class="custom-icon" width="22" height="22" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg" fill="#00537a">
+                            <g>
+                                <path d="m13.02024,4.48316c3.46937,0.4364 6.18599,3.15302 6.62239,6.62243c0.06546,0.55642
+                             0.5346,0.96009 1.0801,0.96009c0.04364,0 0.08728,0 0.13092,-0.01091c0.60006,-0.07637
+                              1.02555,-0.62188 0.94918,-1.22193c-0.55642,-4.46223 -4.05856,-7.96438 -8.52075,
+                              -8.52079c-0.60006,-0.06546 -1.14556,0.36003 -1.21102,0.96009c-0.07637,0.60006 0.34912,
+                              1.14556 0.94918,1.21102zm0.41458,2.30203c-0.57824,-0.15274 -1.17829,0.19638 -1.33103,
+                              0.78553c-0.15274,0.58915 0.19638,1.17829 0.78553,1.33103c1.14552,0.29457 2.04015,1.1892
+                               2.34563,2.34567c0.13092,0.49095 0.56733,0.81826 1.05828,0.81826c0.08728,0 0.18547,
+                               -0.01091 0.27275,-0.03273c0.57824,-0.15274 0.92736,-0.7528 0.78553,-1.33103c-0.51277,
+                               -1.93109 -2.00746,-3.42577 -3.91668,-3.91673zm6.51329,8.83719l-2.77117,-0.31639c-0.66552,
+                               -0.07637 -1.32012,0.15274 -1.78926,0.62188l-2.00742,2.00746c-3.08756,-1.57106 -5.6187,
+                               -4.09129 -7.18976,-7.18976l2.01837,-2.01837c0.46913,-0.46913 0.69825,-1.12374 0.62188,
+                               -1.78926l-0.31639,-2.74935c-0.13092,-1.10192 -1.05828,-1.93109 -2.17111,-1.93109l-1.88745
+                               ,0c-1.23284,0 -2.25839,1.02555 -2.18202,2.25839c0.57824,9.31723 8.02984,16.75792 17.33611,
+                               17.33616c1.23284,0.07637 2.25839,-0.94918 2.25839,-2.18202l0,-1.88745c0.01091,-1.10192
+                                -0.81826,-2.02928 -1.92018,-2.1602z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="header-info__content-wrapper">
+                        <div class="header-info__content">
+                            <a class="header-desktop__info--phone-link" href="tel:7777">7777</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-info header-desktop__info header-desktop__info--actions header-info--theme-default header-info--direction-row header-info--content-descr-align-left"
+                     data-test="header-info">
+                    <div class="header-info__content-wrapper">
+                        <div class="header-info__content">
+                            <div
+                                    class="custom-select custom-select--border-full custom-select--margin-none custom-select--size-medium  header-desktop__language-select custom-select--full-width"
+                                    data-test="custom-select" data-test-name="language">
+                                <div class="jss6 jss8 jss12 custom-select__select-mui">
+                                    <div class="jss1">
+                                        <div class="jss2 custom-select__select jss3 jss15 jss18" aria-pressed="false"
+                                             tabindex="0" role="button" aria-haspopup="true">Русский
+                                        </div>
+                                        <input type="hidden" value="ru">
+                                        <svg class="jss21 jss5 custom-select__icon" focusable="false"
+                                             viewBox="0 0 24 24"
+                                             aria-hidden="true">
+                                            <path d="M7 10l5 5 5-5z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                    class="custom-select custom-select--border-full custom-select--margin-none custom-select--size-medium header-desktop__city-select custom-select--full-width"
+                                    data-test="custom-select" data-test-name="cities">
+                                <div class="jss6 jss8 jss12 custom-select__select-mui">
+                                    <div class="jss1">
+                                        <div class="jss2 custom-select__select jss3 jss15 jss18" aria-pressed="false"
+                                             tabindex="0" role="button" aria-haspopup="true">Минск
+                                        </div>
+                                        <input type="hidden" value="2">
+                                        <svg class="jss21 jss5 custom-select__icon" focusable="false"
+                                             viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M7 10l5 5 5-5z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="authorization-cta" data-test="authorization-modal-button">
+                                <button class="custom-button custom-button--primary custom-button--size-medium"
+                                        type="button" data-test="custom-button" data-test-type="login">
+                                <span class="custom-button__content">
+                                    <span class="custom-button__badge"></span>
+                                    <span class="custom-button__content-children">Войти</span>
+                                </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scene-content">
+            <div class="sticky-component">
+                <div class="sticky-component__content">
+                    <div class="desktop-navigation">
+                        <div class="desktop-navigation__content">
+                            <div class="composed-navigation">
+                                <div class="composed-navigation__content">
+                                    <div class="composed-navigation__primary">
+                                        <div
+                                                class="horizontal-menu horizontal-menu--theme-default horizontal-menu--direction-horizontal horizontal-menu--align-left">
+                                            <ul class="horizontal-menu__list">
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/pizza/" data-manual="True" data-index="1">
+                                                        <span class="horizontal-menu__list-item-title">Пицца</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/lunch/" data-manual="True" data-index="2">
+                                                        <span class="horizontal-menu__list-item-title">ЛАНЧ</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/wings/" data-manual="True" data-index="3">
+                                                        <span class="horizontal-menu__list-item-title">Курица</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/potato/" data-manual="True" data-index="4">
+                                                        <span class="horizontal-menu__list-item-title">Картофель</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/bread/" data-manual="True" data-index="5">
+                                                        <span class="horizontal-menu__list-item-title">Хлебцы</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/salads/" data-manual="True" data-index="6">
+                                                        <span class="horizontal-menu__list-item-title">Салаты</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/deserts/" data-manual="True" data-index="7">
+                                                        <span class="horizontal-menu__list-item-title">Десерты</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/drinks/" data-manual="True" data-index="8">
+                                                        <span class="horizontal-menu__list-item-title">Напитки</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                                    <a href="/sauce/" data-manual="True" data-index="9">
+                                                        <span class="horizontal-menu__list-item-title">Соусы</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="composed-navigation__secondary">
+                                        <div
+                                                class="horizontal-menu horizontal-menu--theme-default horizontal-menu--direction-horizontal horizontal-menu--align-left">
+                                            <ul class="horizontal-menu__list">
+                                                <li class="horizontal-menu__list-item">
+                                                    <a href="" data-manual="True" data-index="0">
+                                                        <span class="horizontal-menu__list-item-title">Акции</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item">
+                                                    <a href="" data-manual="True" data-index="1">
+                                                        <span class="horizontal-menu__list-item-title">Новости</span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item">
+                                                    <a href="" data-manual="True" data-index="2">
+                                                        <span class="horizontal-menu__list-item-title">PizzaMania вакансии</span>
+                                                        <span class="horizontal-menu__list-item-title-after">
+                                <svg class="menu-custom-icon" width="24" height="24" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg" fill="#e31937">
+                                    <g>
+                                        <path d="M13.5 0.669983C14.24 4.49957 14.24 3.31998 14.24 5.46998C14.24
+                                         7.52998 12.89 9.19998 10.83 9.19998C8.76 9.19998 7.2 7.52998 7.2
+                                         5.46998L7.23 5.10998C5.21 7.50998 4 10.62 4 14C4 18.42 7.58 22 12
+                                          22C16.42 22 20 18.42 20 14C20 8.60998 17.41 3.79998 13.5
+                                           0.669983ZM11.71 19C9.92999 19 8.48999 17.6 8.48999 15.86C8.48999
+                                            14.24 9.53999 13.1 11.3 12.74C13.07 12.38 14.9 11.53 15.92
+                                             10.16C16.31 11.45 16.51 12.81 16.51 14.2C16.51 16.85
+                                              14.36 19 11.71 19Z"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                                                    </a>
+                                                </li>
+                                                <li class="horizontal-menu__list-item">
+                                                    <a href="" data-manual="True" data-index="3">
+                                                        <span class="horizontal-menu__list-item-title">Программа Лояльности</span>
+                                                        <span class="horizontal-menu__list-item-title-after">
+                                <svg class="menu-custom-icon" width="24" height="24" viewBox="0 0 24 24"
+                                     xmlns="http://www.w3.org/2000/svg" fill="#88b337">
+                                    <g>
+                                        <path d="M12.3677 5.74705L11.4513 4.27588H10.1605C9.56929 4.27578 9.02136
+                                         4.58598 8.71723 5.09298L7.86206 6.48277L10.8965 8.41381L12.3677 5.74705Z">
+                                        </path>
+                                        <path d="M17.1996 6.92774L16.1378 5.10347C15.8676 4.59268 15.3363 4.27392
+                                         14.7585 4.27589H11.4512L13.9309 8.96553L12.5516 9.79312L16.6569
+                                          10.2602L18.6205 6.20692L17.1996 6.92774Z">
+                                        </path>
+                                        <path d="M18.8965 10.069L15.5862 12L16.9655 14.4828H19.1724L19.7489
+                                         13.5517C20.0691 13.0334 20.0841 12.3824 19.7881 11.8499L18.8965 10.069Z">
+                                        </path>
+                                        <path d="M13.6551 14.4828V13.1035L10.8965 16.138L13.6551
+                                        19.7242V18.6207H15.862C16.4431 18.6349 16.9803 18.3126 17.2413
+                                        17.7932L19.1723 14.4828H13.6551Z">
+                                        </path>
+                                        <path d="M6.75864 14.7587L6.08691 16.3068L6.92636 17.7609C7.23774 18.2879
+                                         7.80174 18.6139 8.4138 18.6207H9.51725V14.7587H6.75864Z">
+                                        </path>
+                                        <path d="M10.069 12.2759L8.41378 8.6897L4 8.96556L5.57765 9.94376L4.55172
+                                         12C4.26634 12.5149 4.26634 13.1404 4.55172 13.6552L6.08662 16.3068L6.66096
+                                          15.3104L8.71116 11.7518L10.069 12.2759Z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="composed-navigation__extra">
+                                        <div class="cart-button">
+                                            <button
+                                                    class="custom-button custom-button--secondary custom-button--size-medium cart-button__button">
+                          <span class="button__content">
+                              <span class="custom-button__badge"></span>
+                              <span class="custom-button__content-children">
+                                  <div class="cart-button__button-content">
+                                      <span>
+                                          <svg class="button-custom-icon" width="24" height="24"
+                                               viewBox="0 0 24 24"
+                                               xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                            <g>
+                                              <path d="M7.00001 18C5.90001 18 5.01001 18.9 5.01001 20C5.01001
+                                               21.1 5.90001 22 7.00001 22C8.10001 22 9.00001 21.1 9.00001
+                                                20C9.00001 18.9 8.10001 18 7.00001 18ZM1 2V4H3L6.6 11.59L5.25
+                                                 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.28
+                                                  15 7.17 14.89 7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96
+                                                   12.59 17.3 11.97L20.88 5.48C20.96 5.34 21 5.17 21 5C21 4.45
+                                                    20.55 4 20 4H5.21L4.27 2H1ZM17 18C15.9 18 15.01 18.9 15.01
+                                                     20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9
+                                                      18.1 18 17 18Z">
+                                              </path>
+                                            </g>
+                                          </svg>
+                                      </span>
+                                      <span class="cart-button__button-text">
+                                          Корзина:
+                                          0 руб.
+                                      </span>
+                                  </div>
+                              </span>
+                          </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-gallery">
+                <div class="gallery-cell">
+                    <img class="carousel-cell-image" src="{% static 'Marketapp/img/carousel/0df69215848e63d961048dc11d7724b3.jpeg' %}" alt="">
+                </div>
+                <div class="gallery-cell">
+                    <img class="carousel-cell-image" src="{% static 'Marketapp/img/carousel/9a06b8dfc848d0e3b2947f6e0c929cdc.jpeg' %}" alt="">
+                </div>
+                <div class="gallery-cell">
+                    <img class="carousel-cell-image" src="{% static 'Marketapp/img/carousel/ab7bbf12791cfc766d673ecc98179a93.jpeg' %}" alt="">
+                </div>
+                <div class="gallery-cell">
+                    <img class="carousel-cell-image" src="{% static 'Marketapp/img/carousel/f6c67c3d57a1d14f62ab091be6e8bbd9.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="categories__navigation" data-test="categories-navigation">
+                <div class="composed-navigation composed-navigation--no-sticky" data-test="composed-navigation">
+                    <div class="composed-navigation__content">
+                        <div class="composed-navigation__primary" data-test="composed-navigation-primary">
+                            <div class="page-title page-title--color-primary page-title--size-large page-title--align-center page-title--no-margin page-title--no-padding"
+                                 data-test="page-title">
+                                <div class="page-title__content-primary"><h1 class="page-title__title">Пицца</h1></div>
+                            </div>
+                        </div>
+                        <div class="composed-navigation__extra" data-test="composed-navigation-extra">
+                            <div class="listing__desktop-sorting-navigation" data-test="desktop-sorting-navigation">
+                                <div class="horizontal-menu horizontal-menu--theme-default horizontal-menu--direction-horizontal horizontal-menu--align-left"
+                                     data-test="horizontal-menu">
+                                    <div class="horizontal-menu__menu-title">Сортировать по:</div>
+                                    <ul class="horizontal-menu__list">
+                                        <li class="horizontal-menu__list-item horizontal-menu__list-item--active">
+                                            <button type="button" data-sort="custom" data-index="0"><span
+                                                    class="horizontal-menu__list-item-title">популярности</span>
+                                            </button>
+                                        </li>
+                                        <li class="horizontal-menu__list-item">
+                                            <button type="button" data-sort="default" data-index="1"><span
+                                                    class="horizontal-menu__list-item-title">категориям</span></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="categories__product-groups">
+                <div class="product-grid categories__product-groups-group">
+                    <div class="product-grid__content">
+                        {% block products %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-info-top">
+                <div class="footer-info-top-content">
+                    <div class="footer__menu">
+                        <div class="footer__menu-group">
+                            <div class="footer__menu-group-title">
+                                <a href="" class="footer__menu-group-list-item-link">О нас</a>
+                            </div>
+                            <ul class="footer__menu-group-list">
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">PizzaMania Belarus</a>
+                                </li>
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Работа в PizzaMania</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="footer__menu-group">
+                            <div class="footer__menu-group-title">
+                                <a href="" class="footer__menu-group-list-item-link">Пиццерии</a>
+                            </div>
+                            <ul class="footer__menu-group-list">
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Карта доставки</a>
+                                </li>
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Условия доставки</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="footer__menu-group">
+                            <div class="footer__menu-group-title">
+                                <a href="" class="footer__menu-group-list-item-link">Новости</a>
+                            </div>
+                            <ul class="footer__menu-group-list">
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Акции</a>
+                                </li>
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Новости</a>
+                                </li>
+                                <li class="footer__menu-group-list-item">
+                                    <a href="/eco-bonus" class="footer__menu-group-list-item-link">Eco bonus</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="footer__menu-group">
+                            <div class="footer__menu-group-title">
+                                <a href="" class="footer__menu-group-list-item-link">Обратная связь</a>
+                            </div>
+                            <ul class="footer__menu-group-list">
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Оставить отзыв</a>
+                                </li>
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Контактные данные</a>
+                                </li>
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Арендодателям</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="footer__menu-group">
+                            <div class="footer__menu-group-title">
+                                <a href="" class="footer__menu-group-list-item-link">Pizza Tracker</a>
+                            </div>
+                            <ul class="footer__menu-group-list">
+                                <li class="footer__menu-group-list-item">
+                                    <a href="" class="footer__menu-group-list-item-link">Поставщикам</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-info-bottom">
+                <div class="footer-info-bottom-payment">
+                    <ul class="footer-info-bottom-payment-list">
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="oplati-ico" class="media-image__element" src="{% static 'Marketapp/img/footer/oplati-ico.png' %}"/>
+                            </div>
+                        </li>
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="belcard-ico" class="media-image__element" src="{% static 'Marketapp/img/footer/belcard-ico.png' %}"/>
+                            </div>
+                        </li>
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="mir-ico" class="media-image__element" src="{% static 'Marketapp/img/footer/mir-ico.png' %}"/>
+                            </div>
+                        </li>
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="b_i_p-ico" class="media-image__element"
+                                     src="{% static 'Marketapp/img/footer/belcard_internet_password-ico.png' %}"/>
+                            </div>
+                        </li>
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="webpay-ico" class="media-image__element" src="{% static 'Marketapp/img/footer/webpay-ico.png' %}"/>
+                            </div>
+                        </li>
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="m-secure-ico" class="media-image__element"
+                                     src="{% static 'Marketapp/img/footer/mastercard_security_code-ico.png' %}"/>
+                            </div>
+                        </li>
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="mastercard-ico" class="media-image__element"
+                                     src="{% static 'Marketapp/img/footer/mastercard-ico.png' %}"/>
+                            </div>
+                        </li>
+                        <li class="footer-info-bottom-payment-list-item">
+                            <div class="media-image media-image--lazy media-image--loaded footer-payment-media">
+                                <img alt="visa-ico" class="media-image__element" src="{% static 'Marketapp/img/footer/visa-ico.png' %}"/>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-info-bottom-company">
+                    <ul class="footer-info-bottom-company-list">
+                        <li>УНП:7770001123</li>
+                        <li>
+                            Юридический адрес: 220073, г. Минск, ул.
+                            Кнорина, 8Б, 1 этаж, помещение № 106
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'Marketapp/js/flickity.pkgd.js' %}"></script>
+    <script>
+        var flkty = new Flickity('.main-gallery', {
+            // options
+            cellAlign: 'left',
+            contain: true,
+            autoPlay: 3000,
+            selectedAttraction: 0.01,
+            friction: 0.15,
+            pauseAutoPlayOnHover: false
+        });
+    </script>
+    <script src="{% static 'Marketapp/js/marketapp.js' %}"></script>
+
+
+</div>
+</body>
+</html>
